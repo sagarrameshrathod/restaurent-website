@@ -1,0 +1,181 @@
+*{
+  background-color: rgb(241, 122, 182);
+}
+
+.header{
+display: flex;
+
+}
+
+.container{
+  display:flex;
+  margin: auto;
+  padding: 40px 15px 20px 15px;
+  border: 0px;
+}
+
+.name{
+  display: flex;
+  background-color:rgb(241, 241, 30);
+  margin: 4px;
+  padding: 8px 110px;
+  border: 10px;
+  border-color: rgb(214, 69, 44);
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.top {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "hero hero cta1"
+    "hero hero cta2"
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 400px;
+  background: white url(https://i.ibb.co/0CqS6D9/taco.jpg);
+  background-size: cover;
+  background-position: bottom right;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.hero > * {
+  background: rgb(241, 241, 30);
+  padding: 5px;
+}
+
+.cta {
+  background: rgb(241, 241, 30);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+}
+
+.cta p {
+  background-color: rgb(241, 241, 30);
+  margin: 0;
+}
+
+.cta1 {
+  grid-area: cta1;
+}
+
+.cta2 {
+  grid-area: cta2;
+}
+
+.price {
+  background-color: rgb(241, 241, 30);
+  font-size: 60px;
+  font-weight: 300;
+}
+
+.features {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.feature {
+  background: white;
+  padding: 10px;
+  border: 1px solid white;
+  text-align: center;
+  box-shadow: 0 0 4px  rgba(0,0,0,0.1);
+}
+
+.feature .icon {
+  font-size: 50px;
+  background-color: white;
+}
+
+.feature h3 {
+  background-color: white;
+}
+
+.feature p {
+  color: rgba(0,0,0,1);
+  background-color: white;
+}
+
+.about {
+  background: white;
+  padding:50px;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  align-items: right;
+}
+
+.about__details{
+  background-color: white;
+}
+.about__details button{
+  background-color: rgb(241, 241, 30);
+}
+.about__details p{
+  background-color: white;
+}
+.about__details h2{
+  background-color: white;
+}
+
+.gallery {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery img {
+  width: 100%;
+}
+
+.gallery h2 {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.gallery h2:before, .gallery h2:after {
+  display: block;
+  height: 10px;
+
+}
+
+.gallery h2:after {
+  --direction: right;
+}
+
+
+@media (max-width: 700px) {
+  .top {
+    grid-template-areas:
+      "hero hero"
+      "cta1 cta2"
+  }
+  /* About */
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .top {
+    grid-template-areas:
+      "hero"
+      "cta1"
+      "cta2"
+  }
+}
